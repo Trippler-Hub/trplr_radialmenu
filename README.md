@@ -1,5 +1,7 @@
 # qb-radialmenu
 Radial Menu Used With QB-Core :arrows_counterclockwise:
+## Preview
+ ![image4](https://github.com/user-attachments/assets/cb244979-afd4-4849-be2a-aad149d4f345)
 
 **Now using FontAwesome Icons!**
 To change icons get the name from [FontAwesome](https://fontawesome.com/v5.0/icons?d=gallery&p=2&s=brands,light,regular,solid&m=free) (v5) and use the icon's name in the config.lua for the icon (no `fa-` or `#` just the name like `arrow-right`)
