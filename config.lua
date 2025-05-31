@@ -1,300 +1,112 @@
 Config = {}
 Config.Keybind = 'F1'           -- FiveM Keyboard, this is registered keymapping, so needs changed in keybindings if player already has this mapped.
 Config.Toggle = false           -- use toggle mode. False requires hold of key
-Config.UseWhilstWalking = false -- use whilst walking
-Config.EnableExtraMenu = true
+Config.UseWhilstWalking = true -- use whilst walking
+Config.EnableExtraMenu = false
 Config.Fliptime = 15000
 
 Config.MenuItems = {
     {
         id = 'citizen',
-        title = 'Citizen',
+        title = 'عام',
         icon = 'user',
         items = {
             {
-                id = 'givenum',
-                title = 'Give Contact Details',
-                icon = 'address-book',
-                type = 'client',
-                event = 'qb-phone:client:GiveContactDetails',
-                shouldClose = true
-            }, {
-            id = 'getintrunk',
-            title = 'Get In Trunk',
-            icon = 'car',
-            type = 'client',
-            event = 'qb-trunk:client:GetIn',
-            shouldClose = true
-        }, {
-            id = 'cornerselling',
-            title = 'Corner Selling',
-            icon = 'cannabis',
-            type = 'client',
-            event = 'qb-drugs:client:cornerselling',
-            shouldClose = true
-        }, {
-            id = 'togglehotdogsell',
-            title = 'Hotdog Selling',
-            icon = 'hotdog',
-            type = 'client',
-            event = 'qb-hotdogjob:client:ToggleSell',
-            shouldClose = true
-        }, {
-            id = 'interactions',
-            title = 'Interaction',
-            icon = 'triangle-exclamation',
-            items = {
-                {
-                    id = 'handcuff',
-                    title = 'Cuff',
-                    icon = 'user-lock',
-                    type = 'client',
-                    event = 'police:client:CuffPlayerSoft',
-                    shouldClose = true
-                }, {
-                id = 'playerinvehicle',
-                title = 'Put In Vehicle',
-                icon = 'car-side',
-                type = 'client',
-                event = 'police:client:PutPlayerInVehicle',
-                shouldClose = true
-            }, {
-                id = 'playeroutvehicle',
-                title = 'Take Out Of Vehicle',
-                icon = 'car-side',
-                type = 'client',
-                event = 'police:client:SetPlayerOutVehicle',
-                shouldClose = true
-            }, {
-                id = 'stealplayer',
-                title = 'Rob',
-                icon = 'mask',
-                type = 'client',
-                event = 'police:client:RobPlayer',
-                shouldClose = true
-            }, {
                 id = 'escort',
-                title = 'Kidnap',
-                icon = 'user-group',
-                type = 'client',
-                event = 'police:client:KidnapPlayer',
-                shouldClose = true
-            }, {
-                id = 'escort2',
-                title = 'Escort',
+                title = 'سحب',
                 icon = 'user-group',
                 type = 'client',
                 event = 'police:client:EscortPlayer',
                 shouldClose = true
             }, {
-                id = 'escort554',
-                title = 'Hostage',
-                icon = 'child',
+                id = 'escort2',
+                title = 'حمل',
+                icon = 'user-group',
                 type = 'client',
-                event = 'A5:Client:TakeHostage',
+                event = 'police:client:KidnapPlayer',
                 shouldClose = true
-            }
-            }
-        }
+            },
         }
     },
     {
         id = 'general',
-        title = 'General',
+        title = 'مواطن',
         icon = 'rectangle-list',
         items = {
             {
+                id = 'drugselling',
+                title = 'بدء البيع',
+                icon = 'capsules',
+                type = 'client',
+                event = 'SellDrugs:Status_Selling_Drugs',
+                shouldClose = true
+            },
+            {
                 id = 'house',
-                title = 'House Interaction',
+                title = 'تفاعل المنزل',
                 icon = 'house',
                 items = {
                     {
                         id = 'givehousekey',
-                        title = 'Give House Keys',
+                        title = 'إعطاء مفتاح المنزل',
                         icon = 'key',
                         type = 'client',
                         event = 'qb-houses:client:giveHouseKey',
                         shouldClose = true
                     }, {
-                    id = 'removehousekey',
-                    title = 'Remove House Keys',
-                    icon = 'key',
-                    type = 'client',
-                    event = 'qb-houses:client:removeHouseKey',
-                    shouldClose = true
-                }, {
-                    id = 'togglelock',
-                    title = 'Toggle Doorlock',
-                    icon = 'door-closed',
-                    type = 'client',
-                    event = 'qb-houses:client:toggleDoorlock',
-                    shouldClose = true
-                }, {
-                    id = 'decoratehouse',
-                    title = 'Decorate House',
-                    icon = 'box',
-                    type = 'client',
-                    event = 'qb-houses:client:decorate',
-                    shouldClose = true
-                }, {
-                    id = 'houseLocations',
-                    title = 'Interaction Locations',
-                    icon = 'house',
-                    items = {
-                        {
-                            id = 'setstash',
-                            title = 'Set Stash',
-                            icon = 'box-open',
-                            type = 'client',
-                            event = 'qb-houses:client:setLocation',
-                            shouldClose = true
-                        }, {
-                        id = 'setoutift',
-                        title = 'Set Wardrobe',
-                        icon = 'shirt',
+                        id = 'removehousekey',
+                        title = 'إزالة مفتاح المنزل',
+                        icon = 'key',
                         type = 'client',
-                        event = 'qb-houses:client:setLocation',
+                        event = 'qb-houses:client:removeHouseKey',
                         shouldClose = true
                     }, {
-                        id = 'setlogout',
-                        title = 'Set Logout',
-                        icon = 'door-open',
+                        id = 'togglelock',
+                        title = 'تبديل قفل الباب',
+                        icon = 'door-closed',
                         type = 'client',
-                        event = 'qb-houses:client:setLocation',
-                        shouldClose = true
-                    }
-                    }
-                }
-                }
-            }, {
-            id = 'clothesmenu',
-            title = 'Clothing',
-            icon = 'shirt',
-            items = {
-                {
-                    id = 'Hair',
-                    title = 'Hair',
-                    icon = 'user',
-                    type = 'client',
-                    event = 'qb-radialmenu:ToggleClothing',
-                    shouldClose = true
-                }, {
-                id = 'Ear',
-                title = 'Ear Piece',
-                icon = 'ear-deaf',
-                type = 'client',
-                event = 'qb-radialmenu:ToggleProps',
-                shouldClose = true
-            }, {
-                id = 'Neck',
-                title = 'Neck',
-                icon = 'user-tie',
-                type = 'client',
-                event = 'qb-radialmenu:ToggleClothing',
-                shouldClose = true
-            }, {
-                id = 'Top',
-                title = 'Top',
-                icon = 'shirt',
-                type = 'client',
-                event = 'qb-radialmenu:ToggleClothing',
-                shouldClose = true
-            }, {
-                id = 'Shirt',
-                title = 'Shirt',
-                icon = 'shirt',
-                type = 'client',
-                event = 'qb-radialmenu:ToggleClothing',
-                shouldClose = true
-            }, {
-                id = 'Pants',
-                title = 'Pants',
-                icon = 'user',
-                type = 'client',
-                event = 'qb-radialmenu:ToggleClothing',
-                shouldClose = true
-            }, {
-                id = 'Shoes',
-                title = 'Shoes',
-                icon = 'shoe-prints',
-                type = 'client',
-                event = 'qb-radialmenu:ToggleClothing',
-                shouldClose = true
-            }, {
-                id = 'meer',
-                title = 'Extras',
-                icon = 'plus',
-                items = {
-                    {
-                        id = 'Hat',
-                        title = 'Hat',
-                        icon = 'hat-cowboy-side',
-                        type = 'client',
-                        event = 'qb-radialmenu:ToggleProps',
+                        event = 'qb-houses:client:toggleDoorlock',
                         shouldClose = true
                     }, {
-                    id = 'Glasses',
-                    title = 'Glasses',
-                    icon = 'glasses',
-                    type = 'client',
-                    event = 'qb-radialmenu:ToggleProps',
-                    shouldClose = true
-                }, {
-                    id = 'Visor',
-                    title = 'Visor',
-                    icon = 'hat-cowboy-side',
-                    type = 'client',
-                    event = 'qb-radialmenu:ToggleProps',
-                    shouldClose = true
-                }, {
-                    id = 'Mask',
-                    title = 'Mask',
-                    icon = 'masks-theater',
-                    type = 'client',
-                    event = 'qb-radialmenu:ToggleClothing',
-                    shouldClose = true
-                }, {
-                    id = 'Vest',
-                    title = 'Vest',
-                    icon = 'vest',
-                    type = 'client',
-                    event = 'qb-radialmenu:ToggleClothing',
-                    shouldClose = true
-                }, {
-                    id = 'Bag',
-                    title = 'Bag',
-                    icon = 'bag-shopping',
-                    type = 'client',
-                    event = 'qb-radialmenu:ToggleClothing',
-                    shouldClose = true
-                }, {
-                    id = 'Bracelet',
-                    title = 'Bracelet',
-                    icon = 'user',
-                    type = 'client',
-                    event = 'qb-radialmenu:ToggleProps',
-                    shouldClose = true
-                }, {
-                    id = 'Watch',
-                    title = 'Watch',
-                    icon = 'stopwatch',
-                    type = 'client',
-                    event = 'qb-radialmenu:ToggleProps',
-                    shouldClose = true
-                }, {
-                    id = 'Gloves',
-                    title = 'Gloves',
-                    icon = 'mitten',
-                    type = 'client',
-                    event = 'qb-radialmenu:ToggleClothing',
-                    shouldClose = true
+                        id = 'decoratehouse',
+                        title = 'تزيين المنزل',
+                        icon = 'box',
+                        type = 'client',
+                        event = 'qb-houses:client:decorate',
+                        shouldClose = true
+                    }, {
+                        id = 'houseLocations',
+                        title = 'مواقع التفاعل',
+                        icon = 'house',
+                        items = {
+                            --[[ {
+                                id = 'setstash',
+                                title = 'تحديد المكان المخفي',
+                                icon = 'box-open',
+                                type = 'client',
+                                event = 'qb-houses:client:setLocation',
+                                shouldClose = true
+                            }, ]] {
+                                id = 'setoutift',
+                                title = 'تحديد خزانة الملابس',
+                                icon = 'shirt',
+                                type = 'client',
+                                event = 'qb-houses:client:setLocation',
+                                shouldClose = true
+                            }, {
+                                id = 'setlogout',
+                                title = 'تحديد مكان الخروج',
+                                icon = 'door-open',
+                                type = 'client',
+                                event = 'qb-houses:client:setLocation',
+                                shouldClose = true
+                            }
+                        }
+                    }
                 }
-                }
-            }
-            }
+            },
         }
-        }
-    },
+    }    
 }
 
 Config.VehicleDoors = {
@@ -459,107 +271,107 @@ Config.JobInteractions = {
     ['ambulance'] = {
         {
             id = 'statuscheck',
-            title = 'Check Health Status',
+            title = 'فحص الحالة الصحية',
             icon = 'heart-pulse',
             type = 'client',
             event = 'hospital:client:CheckStatus',
             shouldClose = true
         }, {
-        id = 'revivep',
-        title = 'Revive',
-        icon = 'user-doctor',
-        type = 'client',
-        event = 'hospital:client:RevivePlayer',
-        shouldClose = true
-    }, {
-        id = 'treatwounds',
-        title = 'Heal wounds',
-        icon = 'bandage',
-        type = 'client',
-        event = 'hospital:client:TreatWounds',
-        shouldClose = true
-    }, {
-        id = 'emergencybutton2',
-        title = 'Emergency button',
-        icon = 'bell',
-        type = 'client',
-        event = 'police:client:SendPoliceEmergencyAlert',
-        shouldClose = true
-    }, {
-        id = 'escort',
-        title = 'Escort',
-        icon = 'user-group',
-        type = 'client',
-        event = 'police:client:EscortPlayer',
-        shouldClose = true
-    }, {
-        id = 'stretcheroptions',
-        title = 'Stretcher',
-        icon = 'bed-pulse',
-        items = {
-            {
-                id = 'spawnstretcher',
-                title = 'Spawn Stretcher',
-                icon = 'plus',
-                type = 'client',
-                event = 'qb-radialmenu:client:TakeStretcher',
-                shouldClose = false
-            }, {
-            id = 'despawnstretcher',
-            title = 'Remove Stretcher',
-            icon = 'minus',
+            id = 'revivep',
+            title = 'إحياء',
+            icon = 'user-doctor',
             type = 'client',
-            event = 'qb-radialmenu:client:RemoveStretcher',
-            shouldClose = false
+            event = 'hospital:client:RevivePlayer',
+            shouldClose = true
+        }, {
+            id = 'treatwounds',
+            title = 'علاج الجروح',
+            icon = 'bandage',
+            type = 'client',
+            event = 'hospital:client:TreatWounds',
+            shouldClose = true
+        }, {
+            id = 'emergencybutton2',
+            title = 'زر الطوارئ',
+            icon = 'bell',
+            type = 'client',
+            event = 'police:client:SendPoliceEmergencyAlert',
+            shouldClose = true
+        }, {
+            id = 'escort',
+            title = 'مرافقة',
+            icon = 'user-group',
+            type = 'client',
+            event = 'police:client:EscortPlayer',
+            shouldClose = true
+        }, {
+            id = 'stretcheroptions',
+            title = 'نقالة',
+            icon = 'bed-pulse',
+            items = {
+                {
+                    id = 'spawnstretcher',
+                    title = 'إظهار النقالة',
+                    icon = 'plus',
+                    type = 'client',
+                    event = 'qb-radialmenu:client:TakeStretcher',
+                    shouldClose = false
+                }, {
+                    id = 'despawnstretcher',
+                    title = 'إزالة النقالة',
+                    icon = 'minus',
+                    type = 'client',
+                    event = 'qb-radialmenu:client:RemoveStretcher',
+                    shouldClose = false
+                }
+            }
         }
-        }
-    }
     },
     ['taxi'] = {
         {
             id = 'togglemeter',
-            title = 'Show/Hide Meter',
+            title = 'إظهار/إخفاء العداد',
             icon = 'eye-slash',
             type = 'client',
             event = 'qb-taxi:client:toggleMeter',
             shouldClose = false
         }, {
-        id = 'togglemouse',
-        title = 'Start/Stop Meter',
-        icon = 'hourglass-start',
-        type = 'client',
-        event = 'qb-taxi:client:enableMeter',
-        shouldClose = true
-    }, {
-        id = 'npc_mission',
-        title = 'NPC Mission',
-        icon = 'taxi',
-        type = 'client',
-        event = 'qb-taxi:client:DoTaxiNpc',
-        shouldClose = true
-    }
+            id = 'togglemouse',
+            title = 'تشغيل/إيقاف العداد',
+            icon = 'hourglass-start',
+            type = 'client',
+            event = 'qb-taxi:client:enableMeter',
+            shouldClose = true
+        }, {
+            id = 'npc_mission',
+            title = 'بدء مهمة',
+            icon = 'taxi',
+            type = 'client',
+            event = 'qb-taxi:client:DoTaxiNpc',
+            shouldClose = true
+        }
     },
     ['tow'] = {
         {
             id = 'togglenpc',
-            title = 'Toggle NPC',
+            title = 'بدء / توقف',
             icon = 'toggle-on',
             type = 'client',
             event = 'jobs:client:ToggleNpc',
             shouldClose = true
         }, {
-        id = 'towvehicle',
-        title = 'Tow vehicle',
-        icon = 'truck-pickup',
-        type = 'client',
-        event = 'qb-tow:client:TowVehicle',
-        shouldClose = true
-    }
+            id = 'towvehicle',
+            title = 'سحب المركبة',
+            icon = 'truck-pickup',
+            type = 'client',
+            event = 'qb-tow:client:TowVehicle',
+            shouldClose = true
+        }
     },
     ['mechanic'] = {
         {
             id = 'towvehicle',
-            title = 'Tow vehicle',
+            title = 'سحب المركبة',
             icon = 'truck-pickup',
             type = 'client',
             event = 'qb-tow:client:TowVehicle',
@@ -569,136 +381,244 @@ Config.JobInteractions = {
     ['police'] = {
         {
             id = 'emergencybutton',
-            title = 'Emergency button',
+            title = 'طوارئ',
             icon = 'bell',
             type = 'client',
-            event = 'police:client:SendPoliceEmergencyAlert',
+            event = 'ps-dispatch:client:officerbackup',
             shouldClose = true
-        }, {
-        id = 'checkvehstatus',
-        title = 'Check Tune Status',
-        icon = 'circle-info',
-        type = 'client',
-        event = 'qb-tunerchip:client:TuneStatus',
-        shouldClose = true
-    }, {
-        id = 'resethouse',
-        title = 'Reset house lock',
-        icon = 'key',
-        type = 'client',
-        event = 'qb-houses:client:ResetHouse',
-        shouldClose = true
-    }, {
-        id = 'takedriverlicense',
-        title = 'Revoke Drivers License',
-        icon = 'id-card',
-        type = 'client',
-        event = 'police:client:SeizeDriverLicense',
-        shouldClose = true
-    }, {
-        id = 'policeinteraction',
-        title = 'Police Actions',
-        icon = 'list-check',
-        items = {
-            {
-                id = 'statuscheck',
-                title = 'Check Health Status',
-                icon = 'heart-pulse',
-                type = 'client',
-                event = 'hospital:client:CheckStatus',
-                shouldClose = true
-            }, {
-            id = 'checkstatus',
-            title = 'Check status',
-            icon = 'question',
+        },
+        {
+            id = 'dispatch',
+            title = 'البلاغات',
+            icon = 'satellite-dish',
             type = 'client',
-            event = 'police:client:CheckStatus',
+            event = 'ps-dispatch:client:opencalls',
             shouldClose = true
-        }, {
-            id = 'escort',
-            title = 'Escort',
-            icon = 'user-group',
+        },{
+            id = 'policeinteraction',
+            title = 'الشرطة',
+            icon = 'shield-halved',
+            items = {
+                --[[ {
+                    id = 'statuscheck',
+                    title = 'فحص حالة الصحة',
+                    icon = 'heart-pulse',
+                    type = 'client',
+                    event = 'hospital:client:CheckStatus',
+                    shouldClose = true
+                }, ]]{
+                    id = 'takedriverlicense',
+                    title = 'سحب رخصة القيادة',
+                    icon = 'id-card',
+                    type = 'client',
+                    event = 'police:client:SeizeDriverLicense',
+                    shouldClose = true
+                },--[[ {
+                    id = 'checkstatus',
+                    title = 'فحص الحالة',
+                    icon = 'question',
+                    type = 'client',
+                    event = 'police:client:CheckStatus',
+                    shouldClose = true
+                }, ]]{
+                    id = 'fineplayer',
+                    title = 'إصدار غرامة',
+                    icon = 'file-invoice-dollar',
+                    type = 'client',
+                    event = 'payments:client:PolCharge',
+                    shouldClose = true
+                },{
+                    id = 'jailplayer',
+                    title = 'سجن',
+                    icon = 'user-lock',
+                    type = 'client',
+                    event = 'police:client:JailPlayer',
+                    shouldClose = true
+                },{
+                    id = 'resethouse',
+                    title = 'تغيير قفل البيت',
+                    icon = 'key',
+                    type = 'client',
+                    event = 'qb-houses:client:ResetHouse',
+                    shouldClose = true
+                },{
+                    id = 'policeobjects',
+                    title = 'الأغراض',
+                    icon = 'road',
+                    items = {
+                        {
+                            id = 'spawnpion',
+                            title = 'قمع',
+                            icon = 'triangle-exclamation',
+                            type = 'client',
+                            event = 'police:client:spawnCone',
+                            shouldClose = false
+                            }, {
+                            id = 'spawnhek',
+                            title = 'بوابة',
+                            icon = 'torii-gate',
+                            type = 'client',
+                            event = 'police:client:spawnBarrier',
+                            shouldClose = false
+                        }, {
+                            id = 'spawnschotten',
+                            title = 'علامة حد السرعة',
+                            icon = 'sign-hanging',
+                            type = 'client',
+                            event = 'police:client:spawnRoadSign',
+                            shouldClose = false
+                        }, {
+                            id = 'spawntent',
+                            title = 'خيمة',
+                            icon = 'campground',
+                            type = 'client',
+                            event = 'police:client:spawnTent',
+                            shouldClose = false
+                        }, {
+                            id = 'spawnverlichting',
+                            title = 'إضافة',
+                            icon = 'lightbulb',
+                            type = 'client',
+                            event = 'police:client:spawnLight',
+                            shouldClose = false
+                        }, {
+                            id = 'spikestrip',
+                            title = 'أشواك',
+                            icon = 'caret-up',
+                            type = 'client',
+                            event = 'police:client:SpawnSpikeStrip',
+                            shouldClose = false
+                        }, {
+                            id = 'deleteobject',
+                            title = 'إزالة الغرض',
+                            icon = 'trash',
+                            type = 'client',
+                            event = 'police:client:deleteObject',
+                            shouldClose = false
+                        }
+                    }
+                }
+            }
+        },{
+            id = 'open_mdt',
+            title = 'MDT',
+            icon = 'database',
             type = 'client',
-            event = 'police:client:EscortPlayer',
+            event = 'mdt:OpenMDT',
             shouldClose = true
-        }, {
+        },{
+            id = 'joinradio',
+            title = 'تردد الراديو',
+            icon = 'walkie-talkie',    
+            items = {
+                {
+                    id = 'joinradio1',
+                    title = '1',
+                    icon = 'wifi',
+                    type = 'client',
+                    event = 'qb-radio:client:JoinRadioChannel1',
+                    shouldClose = true
+                },
+                {
+                    id = 'joinradio2',
+                    title = '2',
+                    icon = 'wifi',
+                    type = 'client',
+                    event = 'qb-radio:client:JoinRadioChannel2',
+                    shouldClose = true
+                },
+                {
+                    id = 'joinradio3',
+                    title = '3',
+                    icon = 'wifi',
+                    type = 'client',
+                    event = 'qb-radio:client:JoinRadioChannel3',
+                    shouldClose = true
+                },
+                {
+                    id = 'joinradio3',
+                    title = '4',
+                    icon = 'wifi',
+                    type = 'client',
+                    event = 'qb-radio:client:JoinRadioChannel4',
+                    shouldClose = true
+                },
+                {
+                    id = 'joinradio5',
+                    title = '5',
+                    icon = 'wifi',
+                    type = 'client',
+                    event = 'qb-radio:client:JoinRadioChannel5',
+                    shouldClose = true
+                },
+                {
+                    id = 'joinradio6',
+                    title = '6',
+                    icon = 'wifi',
+                    type = 'client',
+                    event = 'qb-radio:client:JoinRadioChannel6',
+                    shouldClose = true
+                },
+                {
+                    id = 'joinradio7',
+                    title = '7',
+                    icon = 'wifi',
+                    type = 'client',
+                    event = 'qb-radio:client:JoinRadioChannel7',
+                    shouldClose = true
+                },
+                {
+                    id = 'joinradio8',
+                    title = '9',
+                    icon = 'wifi',
+                    type = 'client',
+                    event = 'qb-radio:client:JoinRadioChannel9',
+                    shouldClose = true
+                },
+                {
+                    id = 'joinradio9',
+                    title = '10',
+                    icon = 'wifi',
+                    type = 'client',
+                    event = 'qb-radio:client:JoinRadioChannel10',
+                    shouldClose = true
+                },
+                {
+                    id = 'leaveradio',
+                    title = '',
+                    icon = 'right-from-bracket',
+                    type = 'client',
+                    event = 'qb-radio:client:JoinRadioChannelToggle',
+                    shouldClose = true
+                },
+            },
+        },{
+            id = 'radar',
+            title = 'الرادار',
+            icon = 'tachograph-digital',
+            type = 'client',
+            event = 'wk:openRemote',
+            shouldClose = true
+        },{
             id = 'searchplayer',
-            title = 'Search',
+            title = 'تفتيش',
             icon = 'magnifying-glass',
             type = 'server',
             event = 'police:server:SearchPlayer',
             shouldClose = true
-        }, {
-            id = 'jailplayer',
-            title = 'Jail',
-            icon = 'user-lock',
+        },{
+            id = 'plist',
+            title = 'إظهار القائمة',
+            icon = 'bars',
             type = 'client',
-            event = 'police:client:JailPlayer',
+            event = 'plist:toggleNUI',
             shouldClose = true
         }
-        }
-    }, {
-        id = 'policeobjects',
-        title = 'Objects',
-        icon = 'road',
-        items = {
-            {
-                id = 'spawnpion',
-                title = 'Cone',
-                icon = 'triangle-exclamation',
-                type = 'client',
-                event = 'police:client:spawnCone',
-                shouldClose = false
-            }, {
-            id = 'spawnhek',
-            title = 'Gate',
-            icon = 'torii-gate',
-            type = 'client',
-            event = 'police:client:spawnBarrier',
-            shouldClose = false
-        }, {
-            id = 'spawnschotten',
-            title = 'Speed Limit Sign',
-            icon = 'sign-hanging',
-            type = 'client',
-            event = 'police:client:spawnRoadSign',
-            shouldClose = false
-        }, {
-            id = 'spawntent',
-            title = 'Tent',
-            icon = 'campground',
-            type = 'client',
-            event = 'police:client:spawnTent',
-            shouldClose = false
-        }, {
-            id = 'spawnverlichting',
-            title = 'Lighting',
-            icon = 'lightbulb',
-            type = 'client',
-            event = 'police:client:spawnLight',
-            shouldClose = false
-        }, {
-            id = 'spikestrip',
-            title = 'Spike Strips',
-            icon = 'caret-up',
-            type = 'client',
-            event = 'police:client:SpawnSpikeStrip',
-            shouldClose = false
-        }, {
-            id = 'deleteobject',
-            title = 'Remove object',
-            icon = 'trash',
-            type = 'client',
-            event = 'police:client:deleteObject',
-            shouldClose = false
-        }
-        }
-    }
     },
     ['hotdog'] = {
         {
             id = 'togglesell',
-            title = 'Toggle sell',
+            title = 'بيع/توقف',
             icon = 'hotdog',
             type = 'client',
             event = 'qb-hotdogjob:client:ToggleSell',

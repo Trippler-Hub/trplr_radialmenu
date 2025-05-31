@@ -1,6 +1,6 @@
 "use strict";
 
-var DEFAULT_SIZE = 150;
+var DEFAULT_SIZE = 180;
 var MIN_SECTORS = 3;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -20,7 +20,7 @@ function RadialMenu(params) {
 
     self.radius = 55;
     self.innerRadius = 18;
-    self.sectorSpace = 3.5;
+    self.sectorSpace = 1;
     self.sectorCount = Math.max(self.menuItems.length, MIN_SECTORS);
     self.closeOnClick = params.closeOnClick !== undefined ? !!params.closeOnClick : false;
 
@@ -228,7 +228,7 @@ RadialMenu.prototype.createMenu = function (classValue, levelItems, nested) {
     } else if (menuItems + 1 == 3) {
         angleShift = angleStep / 2 + 241;
     } else if (menuItems + 1 == 4) {
-        angleShift = angleStep / 2 + 136;
+        angleShift = angleStep / 2 + 180;
     } else if (menuItems + 1 == 5) {
         angleShift = angleStep / 2 + 145;
     } else if (menuItems + 1 == 6) {
@@ -259,7 +259,7 @@ RadialMenu.prototype.createMenu = function (classValue, levelItems, nested) {
     if (nested) {
         self.createCenter(svg, "Close", "arrow-left", 10);
     } else {
-        self.createCenter(svg, "Close", "circle-xmark", 10);
+        self.createCenter(svg, "Close", "xmark", 10);
     }
 
     svg.addEventListener("mousedown", function (event) {
