@@ -1,5 +1,5 @@
 if GetCurrentResourceName() ~= "trplr_radialmenu" then
-    return print("^6Changing the resource's name wont't let the resource start, ^1" .. GetCurrentResourceName() .. "^0 > ^2 trplrtrplr_radialmenu_menu ^7")
+    return print("^6Changing the resource's name wont't let the resource start, ^1" .. GetCurrentResourceName() .. "^0 > ^2 trplr_radialmenu_menu ^7")
 end
 
 CreateThread(function()
